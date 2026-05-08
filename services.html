@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services — The Chocolate Barista</title>
+  <meta name="description" content="Consulting, speaking, and writing services with Michelle R. Johnson-Strickland — coffee culture critic and founder of The Chocolate Barista and Block Standard.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..900,0..100,0..1;1,9..144,400..900,0..100,0..1&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+
+  <!-- Calendly CSS -->
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- DATELINE STRIP -->
+  <div class="dateline-strip">
+    <span>The Chocolate Barista · Est. 2016 · Chicago, IL</span>
+    <span id="today-date">Friday, May 8, 2026</span>
+    <span>Coffee Culture · Culture Criticism · Hospitality</span>
+  </div>
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <div class="masthead__inner">
+      <div class="masthead__top">
+        <p class="masthead__tagline-left">Coffee culture, told honestly.</p>
+        <p class="masthead__meta">Vol. X · Award-Winning · ghosttown.world</p>
+      </div>
+      <div class="masthead__title">
+        <a href="index.html" aria-label="The Chocolate Barista — Home">
+          <div class="tcb-masthead-name">The Chocolate Barista</div>
+        </a>
+      </div>
+      <p class="masthead__subtitle">Race · Representation · Labor · The Business of Belonging in Coffee</p>
+      <div class="masthead__title-row">
+        <nav class="masthead__nav" id="main-nav" aria-label="Primary navigation">
+          <a href="index.html">Home</a>
+          <a href="journal.html">Journal</a>
+          <a href="about.html">About</a>
+          <a href="services.html" class="active">Services</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- PAGE HERO -->
+    <div class="page-hero">
+      <div class="page-hero__inner">
+        <span class="page-hero__eyebrow">Services</span>
+        <h1 class="page-hero__title">Work With Us</h1>
+        <p class="page-hero__deck">
+          Consulting, speaking, and writing services for operators, brands,
+          and organizations ready to do this work — not just talk about it.
+        </p>
+      </div>
+    </div>
+
+    <!-- SERVICES GRID -->
+    <section class="page-wrap services-section" aria-label="Service offerings">
+      <div class="section-header">
+        <div class="section-header__line"></div>
+        <span class="section-label">What We Offer</span>
+        <div class="section-header__line"></div>
+      </div>
+
+      <div class="services-grid fade-in-children">
+
+        <!-- Consulting -->
+        <div class="service-card" id="consulting">
+          <div class="service-card__number">01 · Consulting</div>
+          <h2 class="service-card__title">Strategic Consulting</h2>
+          <p class="service-card__desc">
+            For coffee shops, hospitality brands, and food & beverage operators who are ready to build an inclusive business — not as a values statement, but as a revenue strategy. Engagements are structured, time-bound, and built around your specific operation. We do not offer generic DEI frameworks. We build the business case, and then we build the plan.
+          </p>
+          <p class="service-card__desc" style="margin-top:0.5rem;">
+            Typical engagements run 6–12 weeks. Rates vary by scope. Start with a conversation.
+          </p>
+          <div class="service-card__price">Custom · Inquiry required</div>
+          <a href="#book" class="tcb-btn tcb-btn--solid mt-3">Book a conversation</a>
+        </div>
+
+        <!-- Speaking -->
+        <div class="service-card" id="speaking">
+          <div class="service-card__number">02 · Speaking</div>
+          <h2 class="service-card__title">Keynotes &amp; Panels</h2>
+          <p class="service-card__desc">
+            Available for conferences, industry events, company off-sites, and symposia. Topics include: the business case for cultural hospitality, race and representation in specialty coffee, labor equity in service industries, and building a community-centered space from the ground up.
+          </p>
+          <p class="service-card__desc" style="margin-top:0.5rem;">
+            Keynotes, panel moderation, and workshop facilitation. All audiences considered. No performing for the unconvinced.
+          </p>
+          <div class="service-card__price">Custom · Inquiry required</div>
+          <a href="#book" class="tcb-btn tcb-btn--solid mt-3">Inquire about speaking</a>
+        </div>
+
+        <!-- Writing -->
+        <div class="service-card" id="writing">
+          <div class="service-card__number">03 · Writing</div>
+          <h2 class="service-card__title">Editorial &amp; Thought Leadership</h2>
+          <p class="service-card__desc">
+            Essays, long-form features, brand narrative, op-eds, and thought leadership for publications and brands who understand that the writing is the point — not a vehicle for a call to action. Michelle writes in her own voice. Ghostwriting is available for founders and executives on a very selective basis.
+          </p>
+          <p class="service-card__desc" style="margin-top:0.5rem;">
+            Rate sheet available upon inquiry. Publication credits on request.
+          </p>
+          <div class="service-card__price">Per project · Inquiry required</div>
+          <a href="#book" class="tcb-btn tcb-btn--solid mt-3">Inquire about writing</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- BLOCK STANDARD CTA -->
+    <section style="background:var(--tcb-purple);color:var(--tcb-paper);padding:4rem var(--gutter);" id="block-standard" aria-label="Block Standard program">
+      <div style="max-width:var(--max-width);margin:0 auto;display:grid;grid-template-columns:2fr 1fr;gap:3rem;align-items:center;">
+        <div>
+          <span class="eyebrow" style="color:var(--tcb-tan);">Coming January 2027</span>
+          <h2 class="tcb-display mt-2" style="font-size:clamp(1.75rem,4vw,3.5rem);">Block Standard</h2>
+          <p style="font-family:var(--font-body);font-size:clamp(1rem,1.2vw,1.2rem);line-height:1.55;color:rgba(251,250,246,0.85);margin-top:1rem;max-width:56ch;">
+            A two-quarter hospitality education and credentialing program for coffee and food & beverage professionals ready to move past base-level kindness — toward unreasonable hospitality as a cultural standard. Six students. Three coffee shops. One cohort per year. Applications open January 6, 2027.
+          </p>
+          <p style="font-family:var(--font-body);font-style:italic;font-size:0.95rem;color:rgba(215,200,181,0.75);margin-top:0.75rem;">
+            Student tuition: $3,500 · Rose Nicaud Fellowship available · Payment plans and income share options offered.
+          </p>
+          <div style="display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap;">
+            <a href="https://ghosttown.world/blockstandard" class="tcb-btn" style="border-color:var(--tcb-paper);color:var(--tcb-paper);" target="_blank" rel="noopener">
+              Learn about Block Standard
+            </a>
+            <a href="contact.html" class="tcb-btn" style="border-color:rgba(215,200,181,0.5);color:rgba(251,250,246,0.75);">
+              Express early interest
+            </a>
+          </div>
+        </div>
+        <div style="text-align:right;">
+          <div style="font-family:var(--font-display);font-weight:900;font-variation-settings:'opsz' 144,'SOFT' 100,'WONK' 1;font-size:clamp(4rem,8vw,8rem);line-height:0.9;color:rgba(215,200,181,0.2);text-transform:uppercase;letter-spacing:-0.02em;">
+            Block<br>Standard
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT TO EXPECT STRIP -->
+    <section style="background:var(--tcb-cream);padding:3rem var(--gutter);border-top: 3px solid var(--tcb-black);" aria-label="What to expect">
+      <div style="max-width:var(--max-width);margin:0 auto;">
+        <div class="section-header" style="border-top:none;padding-top:0;">
+          <div class="section-header__line"></div>
+          <span class="section-label">What to Expect</span>
+          <div class="section-header__line"></div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:1.5rem;border-top:var(--hairline-mid);">
+          <div style="padding:1.5rem 1.5rem 1.5rem 0;border-right:var(--hairline-mid);">
+            <div class="eyebrow mb-2">No Convincing</div>
+            <p style="font-family:var(--font-body);font-size:1rem;line-height:1.55;color:var(--tcb-espresso);">
+              We do not spend our energy convincing people that inclusion matters. We work with operators who have already decided — and need strategy, not motivation.
+            </p>
+          </div>
+          <div style="padding:1.5rem;border-right:var(--hairline-mid);">
+            <div class="eyebrow mb-2">Direct Communication</div>
+            <p style="font-family:var(--font-body);font-size:1rem;line-height:1.55;color:var(--tcb-espresso);">
+              You will hear what is not working, and why, and what to do about it. We do not soften the diagnosis to protect the client's comfort. We soften nothing.
+            </p>
+          </div>
+          <div style="padding:1.5rem 0 1.5rem 1.5rem;">
+            <div class="eyebrow mb-2">Full-Bodied Yes</div>
+            <p style="font-family:var(--font-body);font-size:1rem;line-height:1.55;color:var(--tcb-espresso);">
+              We take on a limited number of engagements at a time. If we say yes, we mean it. We do not take work that is not a fit — for us or for you.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALENDLY EMBED -->
+    <section class="calendly-section" id="book" aria-label="Book a conversation">
+      <div class="calendly-section__inner">
+        <div class="calendly-section__intro">
+          <span class="eyebrow mb-2" style="display:block;">Book a Conversation</span>
+          <h2 class="tcb-headline mb-3">Start Here</h2>
+          <p class="tcb-body" style="color:var(--tcb-espresso);">
+            A 30-minute introductory call — to understand what you are working on, whether it's a fit, and what the next step looks like. No pitch. No deck. Just a conversation.
+          </p>
+          <p class="byline mt-2">Select a time below · All times Central</p>
+        </div>
+
+        <!--
+          CALENDLY SETUP:
+          1. Sign up or log in at calendly.com
+          2. Create a new event type (e.g. "Intro Conversation — 30 min")
+          3. Copy your personal Calendly URL (e.g. https://calendly.com/your-username/intro)
+          4. Replace YOUR-CALENDLY-USERNAME/YOUR-EVENT below
+        -->
+        <div class="calendly-embed-wrap">
+          <div
+            class="calendly-inline-widget"
+            data-url="https://calendly.com/YOUR-CALENDLY-USERNAME/intro-conversation"
+            style="min-width:320px;height:660px;"
+            aria-label="Calendly booking calendar">
+          </div>
+        </div>
+
+        <p style="font-family:var(--font-ui);font-size:0.65rem;letter-spacing:0.06em;color:rgba(55,30,10,0.45);margin-top:1rem;text-align:center;">
+          Prefer email? <a href="contact.html" style="color:var(--tcb-purple);">Use the contact form</a> or reach us at <a href="mailto:michelle@ghosttown.world" style="color:var(--tcb-purple);">michelle@ghosttown.world</a>.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="footer-masthead">
+        <div class="tcb-masthead-name">The Chocolate Barista</div>
+        <p class="footer-masthead__tagline">Coffee culture, told honestly. — Est. 2016</p>
+      </div>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-col__label">Navigate</div>
+          <a href="journal.html">Journal</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col__label">Work</div>
+          <a href="services.html#consulting">Consulting</a>
+          <a href="services.html#speaking">Speaking</a>
+          <a href="services.html#writing">Writing</a>
+          <a href="services.html#block-standard">Block Standard</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col__label">Follow</div>
+          <a href="https://instagram.com/thechocolatebarista" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.youtube.com/@YourChannelHandle" target="_blank" rel="noopener">YouTube</a>
+          <a href="#" target="_blank" rel="noopener">Substack</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col__label">Family</div>
+          <a href="https://ghosttown.world" target="_blank" rel="noopener">Ghost Town World</a>
+          <a href="https://ghosttownoats.com" target="_blank" rel="noopener">Ghost Town Oats</a>
+          <a href="https://ghosttown.world/blockstandard" target="_blank" rel="noopener">Block Standard</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 The Chocolate Barista · Ghost Town World · All rights reserved</span>
+        <div class="footer-social">
+          <a href="https://instagram.com/thechocolatebarista" target="_blank" rel="noopener">Instagram</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Calendly JS -->
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

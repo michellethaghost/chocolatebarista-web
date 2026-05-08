@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Journal — The Chocolate Barista</title>
+  <meta name="description" content="Essays, criticism, and dispatches from the intersection of coffee, culture, race, and belonging — by Michelle R. Johnson-Strickland.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..900,0..100,0..1;1,9..144,400..900,0..100,0..1&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- DATELINE STRIP -->
+  <div class="dateline-strip">
+    <span>The Chocolate Barista · Est. 2016 · Chicago, IL</span>
+    <span id="today-date">Friday, May 8, 2026</span>
+    <span>Coffee Culture · Culture Criticism · Hospitality</span>
+  </div>
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <div class="masthead__inner">
+      <div class="masthead__top">
+        <p class="masthead__tagline-left">Coffee culture, told honestly.</p>
+        <p class="masthead__meta">Vol. X · Award-Winning · ghosttown.world</p>
+      </div>
+      <div class="masthead__title">
+        <a href="index.html" aria-label="The Chocolate Barista — Home">
+          <div class="tcb-masthead-name">The Chocolate Barista</div>
+        </a>
+      </div>
+      <p class="masthead__subtitle">Race · Representation · Labor · The Business of Belonging in Coffee</p>
+      <div class="masthead__title-row">
+        <nav class="masthead__nav" id="main-nav" aria-label="Primary navigation">
+          <a href="index.html">Home</a>
+          <a href="journal.html" class="active">Journal</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- PAGE HERO -->
+    <div class="page-hero">
+      <div class="page-hero__inner">
+        <span class="page-hero__eyebrow">The Journal</span>
+        <h1 class="page-hero__title">From the Journal</h1>
+        <p class="page-hero__deck">
+          Essays on race, labor, representation, and what it actually takes to build a coffee shop worth walking into.
+        </p>
+      </div>
+    </div>
+
+    <!-- CATEGORY FILTERS -->
+    <div style="background:var(--tcb-paper);border-bottom: var(--hairline-mid);padding: 0.75rem var(--gutter);">
+      <div style="max-width:var(--max-width);margin:0 auto;display:flex;gap:0;overflow-x:auto;" role="tablist" aria-label="Filter by category">
+        <button class="journal-filter active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="journal-filter" data-filter="culture" role="tab" aria-selected="false">Culture</button>
+        <button class="journal-filter" data-filter="race" role="tab" aria-selected="false">Race &amp; Representation</button>
+        <button class="journal-filter" data-filter="labor" role="tab" aria-selected="false">Labor</button>
+        <button class="journal-filter" data-filter="home-barista" role="tab" aria-selected="false">Home Barista</button>
+        <button class="journal-filter" data-filter="industry" role="tab" aria-selected="false">Industry</button>
+      </div>
+    </div>
+
+    <style>
+      .journal-filter {
+        font-family: var(--font-ui);
+        font-size: 0.65rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 0.5rem 1.1rem;
+        border: none;
+        border-right: var(--hairline);
+        background: transparent;
+        color: rgba(55,30,10,0.55);
+        cursor: pointer;
+        transition: background var(--dur-fast), color var(--dur-fast);
+        white-space: nowrap;
+      }
+      .journal-filter:first-child { border-left: var(--hairline); }
+      .journal-filter:hover,
+      .journal-filter.active {
+        background: var(--tcb-black);
+        color: var(--tcb-paper);
+      }
+    </style>
+
+    <!-- FEATURED STORY -->
+    <div class="page-wrap--wide">
+      <div class="section-header" style="padding-top:1.5rem;">
+        <div class="section-header__line"></div>
+        <span class="section-label">Featured</span>
+        <div class="section-header__line"></div>
+      </div>
+
+      <article class="article-card article-card--featured fade-in">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;">
+          <div>
+            <span class="article-card__eyebrow">Feature Essay</span>
+            <h2 class="article-card__headline" style="font-size:clamp(1.5rem,3.5vw,3rem);margin-top:0.5rem;">
+              <a href="journal-post.html" style="color:inherit;text-decoration:none;">
+                Inclusivity Is Not a Moral Project. It Is a Revenue Strategy.
+              </a>
+            </h2>
+            <p class="article-card__deck mt-2" style="font-size:1.1rem;">
+              The specialty coffee industry spends millions performing community — and hemorrhages customers who never feel they belong. There is a better argument, and we have been making it since 2016.
+            </p>
+            <div class="article-card__byline mt-3">Michelle R. Johnson-Strickland · May 2026 · 12 min read</div>
+            <a href="journal-post.html" class="tcb-btn mt-3" style="display:inline-block;">Read the essay</a>
+          </div>
+          <div>
+            <div style="width:100%;aspect-ratio:4/3;background:var(--tcb-tan);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;">
+              <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(55,30,10,0.4);">Featured Image</span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- JOURNAL GRID -->
+    <div class="page-wrap--wide">
+      <div class="section-header mt-4">
+        <div class="section-header__line"></div>
+        <span class="section-label">All Entries</span>
+        <div class="section-header__line"></div>
+      </div>
+
+      <div class="news-grid news-grid--3col fade-in-children" id="journal-grid">
+
+        <!-- Entry 1 -->
+        <article class="article-card" data-category="labor">
+          <span class="article-card__eyebrow">Culture · Labor</span>
+          <div style="width:100%;aspect-ratio:4/3;background:var(--tcb-gray);border-radius:var(--radius);margin-bottom:0.5rem;display:flex;align-items:center;justify-content:center;">
+            <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(55,30,10,0.3);">Image</span>
+          </div>
+          <a href="journal-post.html" class="article-card__headline" style="display:block;">
+            The Barista Is Not Your Therapist — And Should Not Be Paid Like One
+          </a>
+          <p class="article-card__deck">On emotional labor, invisible service work, and the math behind what hospitality actually costs.</p>
+          <div class="article-card__byline">April 2026 · 8 min read</div>
+          <a href="journal-post.html" class="article-card__read-more mt-2">Continue reading</a>
+        </article>
+
+        <div class="col-divider" aria-hidden="true"></div>
+
+        <!-- Entry 2 -->
+        <article class="article-card" data-category="race">
+          <span class="article-card__eyebrow">Race · Representation</span>
+          <div style="width:100%;aspect-ratio:4/3;background:var(--tcb-tan);border-radius:var(--radius);margin-bottom:0.5rem;display:flex;align-items:center;justify-content:center;">
+            <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(55,30,10,0.3);">Image</span>
+          </div>
+          <a href="journal-post.html" class="article-card__headline" style="display:block;">
+            Being Black in Specialty Coffee — What Has Changed, and What Has Not
+          </a>
+          <p class="article-card__deck">Ten years of this work, and some things are better. Some things are exactly the same. Here is the honest count.</p>
+          <div class="article-card__byline">March 2026 · 14 min read</div>
+          <a href="journal-post.html" class="article-card__read-more mt-2">Continue reading</a>
+        </article>
+
+        <div class="col-divider" aria-hidden="true"></div>
+
+        <!-- Entry 3 -->
+        <article class="article-card" data-category="home-barista">
+          <span class="article-card__eyebrow">Home Barista · Gear</span>
+          <div style="width:100%;aspect-ratio:4/3;background:var(--tcb-cream);border-radius:var(--radius);margin-bottom:0.5rem;display:flex;align-items:center;justify-content:center;">
+            <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(55,30,10,0.3);">Image</span>
+          </div>
+          <a href="journal-post.html" class="article-card__headline" style="display:block;">
+            Everything I Have to Make Coffee at Home
+          </a>
+          <p class="article-card__deck">The full setup — including the Ascaso Steel Duo PID and the oat milk I refuse to compromise on.</p>
+          <div class="article-card__byline">May 2026 · 6 min read</div>
+          <a href="journal-post.html" class="article-card__read-more mt-2">Continue reading</a>
+        </article>
+
+        <!-- Entry 4 -->
+        <article class="article-card" data-category="industry">
+          <span class="article-card__eyebrow">Industry</span>
+          <div style="width:100%;aspect-ratio:4/3;background:var(--tcb-gray);border-radius:var(--radius);margin-bottom:0.5rem;display:flex;align-items:center;justify-content:center;">
+            <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(55,30,10,0.3);">Image</span>
+          </div>
+          <a href="journal-post.html" class="article-card__headline" style="display:block;">
+            What "Community Coffee Shop" Actually Means — And Who Gets to Decide
+          </a>
+          <p class="article-card__deck">Community is the most abused word in hospitality. Here is what it actually requires.</p>
+          <div class="article-card__byline">February 2026 · 10 min read</div>
+          <a href="journal-post.html" class="article-card__read-more mt-2">Continue reading</a>
+        </article>
+
+        <div class="col-divider" aria-hidden="true"></div>
+
+        <!-- Entry 5 -->
+        <article class="article-card" data-category="culture">
+          <span class="article-card__eyebrow">Coffee Culture</span>
+          <div style="width:100%;aspect-ratio:4/3;background:var(--tcb-tan);border-radius:var(--radius);margin-bottom:0.5rem;display:flex;align-items:center;justify-content:center;">
+            <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(55,30,10,0.3);">Image</span>
+          </div>
+          <a href="journal-post.html" class="article-card__headline" style="display:block;">
+            The Customer Is Not Always Right. The Barista Is Sometimes Correct.
+          </a>
+          <p class="article-card__deck">A defense of professional judgment, standards, and the radical act of knowing your craft.</p>
+          <div class="article-card__byline">January 2026 · 7 min read</div>
+          <a href="journal-post.html" class="article-card__read-more mt-2">Continue reading</a>
+        </article>
+
+        <div class="col-divider" aria-hidden="true"></div>
+
+        <!-- Entry 6 -->
+        <article class="article-card" data-category="race">
+          <span class="article-card__eyebrow">Race · History</span>
+          <div style="width:100%;aspect-ratio:4/3;background:var(--tcb-cream);border-radius:var(--radius);margin-bottom:0.5rem;display:flex;align-items:center;justify-content:center;">
+            <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(55,30,10,0.3);">Image</span>
+          </div>
+          <a href="journal-post.html" class="article-card__headline" style="display:block;">
+            Rose Nicaud Sold Coffee in New Orleans Before There Was a Specialty Industry. We Are Still Here.
+          </a>
+          <p class="article-card__deck">On history, inheritance, and what it means to claim space in a room that was not built for you.</p>
+          <div class="article-card__byline">December 2025 · 11 min read</div>
+          <a href="journal-post.html" class="article-card__read-more mt-2">Continue reading</a>
+        </article>
+
+      </div>
+
+      <!-- LOAD MORE -->
+      <div style="padding:2rem 1.5rem;border-top:var(--hairline);text-align:center;">
+        <button class="tcb-btn" onclick="this.textContent='No more entries to load — for now.'">
+          Load more entries
+        </button>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="footer-masthead">
+        <div class="tcb-masthead-name">The Chocolate Barista</div>
+        <p class="footer-masthead__tagline">Coffee culture, told honestly. — Est. 2016</p>
+      </div>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-col__label">Navigate</div>
+          <a href="journal.html">Journal</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col__label">Work</div>
+          <a href="services.html#consulting">Consulting</a>
+          <a href="services.html#speaking">Speaking</a>
+          <a href="services.html#writing">Writing</a>
+          <a href="services.html#block-standard">Block Standard</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col__label">Follow</div>
+          <a href="https://instagram.com/thechocolatebarista" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.youtube.com/@YourChannelHandle" target="_blank" rel="noopener">YouTube</a>
+          <a href="#" target="_blank" rel="noopener">Substack</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col__label">Family</div>
+          <a href="https://ghosttown.world" target="_blank" rel="noopener">Ghost Town World</a>
+          <a href="https://ghosttownoats.com" target="_blank" rel="noopener">Ghost Town Oats</a>
+          <a href="https://ghosttown.world/blockstandard" target="_blank" rel="noopener">Block Standard</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 The Chocolate Barista · Ghost Town World · All rights reserved</span>
+        <div class="footer-social">
+          <a href="https://instagram.com/thechocolatebarista" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.youtube.com/@YourChannelHandle" target="_blank" rel="noopener">YouTube</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

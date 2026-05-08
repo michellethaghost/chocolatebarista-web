@@ -1,0 +1,345 @@
+/* ============================================================
+   THE CHOCOLATE BARISTA — main.js
+   Navigation · Carousel · Animations · Form · Date
+   ============================================================ */
+
+'use strict';
+
+/* ============================================================
+   UTILITIES
+   ============================================================ */
+
+/**
+ * Throttle — limit how often a function fires
+ */
+function throttle(fn, delay) {
+  let last = 0;
+  return function(...args) {
+    const now = Date.now();
+    if (now - last >= delay) {
+      last = now;
+      fn.apply(this, args);
+    }
+  };
+}
+
+/**
+ * Format today's date in TCB style
+ */
+function setTodayDate() {
+  const el = document.getElementById('today-date');
+  if (!el) return;
+  const opts = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  el.textContent = new Date().toLocaleDateString('en-US', opts);
+}
+
+
+/* ============================================================
+   MOBILE NAVIGATION
+   ============================================================ */
+
+function initNav() {
+  const toggle  = document.getElementById('nav-toggle');
+  const nav     = document.getElementById('main-nav');
+  if (!toggle || !nav) return;
+
+  toggle.addEventListener('click', function () {
+    const isOpen = nav.classList.toggle('open');
+    toggle.classList.toggle('open', isOpen);
+    toggle.setAttribute('aria-expanded', String(isOpen));
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+
+  // Close on outside click
+  document.addEventListener('click', function (e) {
+    if (!toggle.contains(e.target) && !nav.contains(e.target)) {
+      nav.classList.remove('open');
+      toggle.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && nav.classList.contains('open')) {
+      nav.classList.remove('open');
+      toggle.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+      toggle.focus();
+    }
+  });
+}
+
+
+/* ============================================================
+   SCROLL-TRIGGERED FADE-IN ANIMATIONS
+   ============================================================ */
+
+function initScrollAnimations() {
+  const targets = document.querySelectorAll('.fade-in, .fade-in-children');
+  if (!targets.length) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.08,
+      rootMargin: '0px 0px -40px 0px',
+    }
+  );
+
+  targets.forEach((el) => observer.observe(el));
+}
+
+
+/* ============================================================
+   PRESS CAROUSEL
+   Auto-scrolls via CSS animation; JS adds pause-on-hover
+   and keyboard navigation for accessibility.
+   ============================================================ */
+
+function initCarousel() {
+  const track = document.getElementById('press-track');
+  if (!track) return;
+
+  // CSS handles the animation; we just expose pause control
+  // Pause on focus (keyboard users tabbing through logos)
+  track.addEventListener('focusin', () => {
+    track.style.animationPlayState = 'paused';
+  });
+
+  track.addEventListener('focusout', () => {
+    track.style.animationPlayState = '';
+  });
+
+  // Keyboard: arrow keys nudge the carousel
+  track.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') {
+      const links = [...track.querySelectorAll('a[href]')];
+      const current = document.activeElement;
+      const idx = links.indexOf(current);
+      if (idx < links.length - 1) links[idx + 1].focus();
+    }
+    if (e.key === 'ArrowLeft') {
+      const links = [...track.querySelectorAll('a[href]')];
+      const current = document.activeElement;
+      const idx = links.indexOf(current);
+      if (idx > 0) links[idx - 1].focus();
+    }
+  });
+}
+
+
+/* ============================================================
+   JOURNAL CATEGORY FILTER
+   ============================================================ */
+
+function initJournalFilters() {
+  const filters = document.querySelectorAll('.journal-filter');
+  const grid    = document.getElementById('journal-grid');
+  if (!filters.length || !grid) return;
+
+  filters.forEach((btn) => {
+    btn.addEventListener('click', function () {
+      // Update active state
+      filters.forEach((f) => {
+        f.classList.remove('active');
+        f.setAttribute('aria-selected', 'false');
+      });
+      this.classList.add('active');
+      this.setAttribute('aria-selected', 'true');
+
+      const filter = this.dataset.filter;
+      const articles = grid.querySelectorAll('article[data-category]');
+
+      articles.forEach((article) => {
+        const match = filter === 'all' || article.dataset.category === filter;
+        article.style.display = match ? '' : 'none';
+      });
+
+      // Also hide/show adjacent col-dividers
+      const dividers = grid.querySelectorAll('.col-divider');
+      dividers.forEach((d) => {
+        d.style.display = filter === 'all' ? '' : 'none';
+      });
+    });
+  });
+}
+
+
+/* ============================================================
+   CONTACT FORM — Formspree AJAX
+   ============================================================ */
+
+function initContactForm() {
+  const form    = document.getElementById('contact-form');
+  const success = document.getElementById('form-success');
+  const error   = document.getElementById('form-error');
+  const btn     = document.getElementById('form-submit-btn');
+
+  if (!form) return;
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    // Basic client-side validation
+    const required = form.querySelectorAll('[required]');
+    let valid = true;
+    required.forEach((field) => {
+      if (!field.value.trim()) {
+        field.style.borderColor = 'var(--tcb-rust)';
+        valid = false;
+      } else {
+        field.style.borderColor = '';
+      }
+    });
+
+    if (!valid) {
+      // Scroll to first invalid field
+      const first = form.querySelector('[required]:not([value])');
+      if (first) first.focus();
+      return;
+    }
+
+    // Update button state
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    try {
+      const data = new FormData(form);
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { Accept: 'application/json' },
+      });
+
+      if (response.ok) {
+        form.style.display = 'none';
+        success.classList.add('visible');
+        success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } else {
+        const json = await response.json();
+        throw new Error(json?.errors?.[0]?.message || 'Server error');
+      }
+    } catch (err) {
+      console.error('Form submission error:', err);
+      error.classList.add('visible');
+      btn.textContent = 'Send message';
+      btn.disabled = false;
+    }
+  });
+
+  // Clear border-color on input
+  form.querySelectorAll('.form-input, .form-textarea, .form-select').forEach((field) => {
+    field.addEventListener('input', () => {
+      field.style.borderColor = '';
+    });
+  });
+}
+
+
+/* ============================================================
+   NEWSLETTER FORM — Placeholder
+   (Replace with ConvertKit/Mailchimp embed when ready)
+   ============================================================ */
+
+function initNewsletterForm() {
+  const form = document.querySelector('form[onsubmit]');
+  if (!form) return;
+
+  form.removeAttribute('onsubmit');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]');
+    if (btn) {
+      btn.textContent = 'Thank you — you\'re on the list.';
+      btn.disabled = true;
+    }
+  });
+}
+
+
+/* ============================================================
+   SMOOTH INTERNAL LINK SCROLL
+   ============================================================ */
+
+function initSmoothScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener('click', function (e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+}
+
+
+/* ============================================================
+   ACTIVE NAV LINK
+   Auto-marks the current page's nav link as active
+   ============================================================ */
+
+function setActiveNav() {
+  const path = window.location.pathname.split('/').pop() || 'index.html';
+  const links = document.querySelectorAll('.masthead__nav a');
+  links.forEach((link) => {
+    const href = link.getAttribute('href');
+    if (href === path) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+}
+
+
+/* ============================================================
+   MASTHEAD SCROLL BEHAVIOR
+   Collapses masthead to compact strip on scroll down
+   ============================================================ */
+
+function initMastheadScroll() {
+  const masthead = document.querySelector('.masthead');
+  if (!masthead) return;
+
+  let lastScroll = 0;
+
+  const onScroll = throttle(() => {
+    const y = window.scrollY;
+    if (y > 120 && y > lastScroll) {
+      masthead.style.position = 'sticky';
+      masthead.style.top = '0';
+      masthead.style.zIndex = '50';
+    }
+    lastScroll = y;
+  }, 100);
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+}
+
+
+/* ============================================================
+   INIT
+   ============================================================ */
+
+document.addEventListener('DOMContentLoaded', function () {
+  setTodayDate();
+  initNav();
+  initScrollAnimations();
+  initCarousel();
+  initJournalFilters();
+  initContactForm();
+  initNewsletterForm();
+  initSmoothScroll();
+  setActiveNav();
+  initMastheadScroll();
+});
