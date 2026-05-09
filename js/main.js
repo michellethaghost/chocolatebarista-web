@@ -176,95 +176,11 @@ function initJournalFilters() {
 
 
 /* ============================================================
-   CONTACT FORM — Formspree AJAX
+   NEWSLETTER & CONTACT FORMS
+   Kit (ConvertKit) handles all email subscriptions natively.
+   No custom JS needed here — Kit's ck.5.js script manages
+   the sticky bar and inline form submissions.
    ============================================================ */
-
-function initContactForm() {
-  const form    = document.getElementById('contact-form');
-  const success = document.getElementById('form-success');
-  const error   = document.getElementById('form-error');
-  const btn     = document.getElementById('form-submit-btn');
-
-  if (!form) return;
-
-  form.addEventListener('submit', async function (e) {
-    e.preventDefault();
-
-    // Basic client-side validation
-    const required = form.querySelectorAll('[required]');
-    let valid = true;
-    required.forEach((field) => {
-      if (!field.value.trim()) {
-        field.style.borderColor = 'var(--tcb-rust)';
-        valid = false;
-      } else {
-        field.style.borderColor = '';
-      }
-    });
-
-    if (!valid) {
-      // Scroll to first invalid field
-      const first = form.querySelector('[required]:not([value])');
-      if (first) first.focus();
-      return;
-    }
-
-    // Update button state
-    btn.textContent = 'Sending…';
-    btn.disabled = true;
-
-    try {
-      const data = new FormData(form);
-      const response = await fetch(form.action, {
-        method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' },
-      });
-
-      if (response.ok) {
-        form.style.display = 'none';
-        success.classList.add('visible');
-        success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      } else {
-        const json = await response.json();
-        throw new Error(json?.errors?.[0]?.message || 'Server error');
-      }
-    } catch (err) {
-      console.error('Form submission error:', err);
-      error.classList.add('visible');
-      btn.textContent = 'Send message';
-      btn.disabled = false;
-    }
-  });
-
-  // Clear border-color on input
-  form.querySelectorAll('.form-input, .form-textarea, .form-select').forEach((field) => {
-    field.addEventListener('input', () => {
-      field.style.borderColor = '';
-    });
-  });
-}
-
-
-/* ============================================================
-   NEWSLETTER FORM — Placeholder
-   (Replace with ConvertKit/Mailchimp embed when ready)
-   ============================================================ */
-
-function initNewsletterForm() {
-  const form = document.querySelector('form[onsubmit]');
-  if (!form) return;
-
-  form.removeAttribute('onsubmit');
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    const btn = form.querySelector('button[type="submit"]');
-    if (btn) {
-      btn.textContent = 'Thank you — you\'re on the list.';
-      btn.disabled = true;
-    }
-  });
-}
 
 
 /* ============================================================
@@ -337,8 +253,6 @@ document.addEventListener('DOMContentLoaded', function () {
   initScrollAnimations();
   initCarousel();
   initJournalFilters();
-  initContactForm();
-  initNewsletterForm();
   initSmoothScroll();
   setActiveNav();
   initMastheadScroll();
