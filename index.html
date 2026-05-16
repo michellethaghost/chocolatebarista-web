@@ -27,8 +27,8 @@
   <!-- DATELINE STRIP -->
   <div class="dateline-strip">
     <span>Est. 2016</span>
-    <span id="today-date">Friday, May 8, 2026</span>
     <span>Coffee Culture · Education · Hospitality</span>
+    <span id="today-date">Friday, May 8, 2026</span>
   </div>
 
   <!-- MASTHEAD -->
@@ -219,23 +219,17 @@
          VIDEO SECTION
          ====================================================== -->
     <section class="video-section" aria-label="YouTube videos">
-      <div class="page-wrap">
+      <div class="page-wrap--wide">
         <div class="section-header">
           <div class="section-header__line"></div>
           <span class="section-label">From the Studio · YouTube</span>
           <div class="section-header__line"></div>
         </div>
-        <p class="tcb-deck mt-2" style="max-width:52ch;">
-          Video essays, coffee culture criticism, and the home barista series — on YouTube.
-        </p>
-      </div>
 
-      <div class="page-wrap--wide">
-        <div class="video-grid fade-in">
+        <div class="video-grid fade-in" style="grid-template-columns:1fr;">
 
-          <!-- Featured video (spans 2 cols) -->
           <!-- Replace VIDEO_ID_1 with your actual YouTube video ID -->
-          <div class="video-grid__item video-grid__item--featured">
+          <div class="video-grid__item">
             <iframe
               class="video-embed"
               src="https://www.youtube.com/embed/VIDEO_ID_1"
@@ -250,28 +244,9 @@
             </div>
           </div>
 
-          <!-- Side videos -->
-          <!-- Replace VIDEO_ID_2 and VIDEO_ID_3 with real IDs -->
-          <div class="video-grid__item">
-            <iframe
-              class="video-embed"
-              src="https://www.youtube.com/embed/VIDEO_ID_2"
-              title="YouTube video — The Chocolate Barista"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-              loading="lazy">
-            </iframe>
-            <div class="video-card__label">
-              <div class="video-card__title">The Business Case for Belonging</div>
-              <div class="video-card__meta">The Chocolate Barista · April 2026</div>
-            </div>
-          </div>
-
-          <!-- You can add a 4th video by removing this comment and adding another .video-grid__item block above -->
-
         </div>
 
-        <div style="padding: 1.5rem 0; text-align:center;">
+        <div style="padding: 1.5rem 1.5rem 2rem; border-top: var(--hairline); text-align:right;">
           <a href="https://www.youtube.com/@YourChannelHandle" class="tcb-btn" target="_blank" rel="noopener">
             Watch on YouTube
           </a>
@@ -287,48 +262,35 @@
          INSTAGRAM GRID
          ====================================================== -->
     <section class="instagram-section" aria-label="Instagram feed">
-      <div class="instagram-section__header page-wrap">
+      <div class="page-wrap--wide">
         <div class="section-header">
           <div class="section-header__line"></div>
           <span class="section-label">Follow Along · Instagram</span>
           <div class="section-header__line"></div>
         </div>
-        <p class="tcb-deck mt-2" style="max-width:48ch;"></p>
-      </div>
 
-      <!--
-        INSTAGRAM EMBED — BEHOLD.SO
-        1. Go to behold.so and sign up (free tier available)
-        2. Connect your Instagram account
-        3. Create a feed widget
-        4. Replace BEHOLD_WIDGET_ID below with your widget ID
-        5. Delete the placeholder grid below
-      -->
-      <div class="instagram-embed-wrap page-wrap--wide" id="behold-feed">
-        <div data-behold-id="lOXbepzE67B1SjoccCjE"></div>
-        <script>
-          (function() {
-            const d=document,s=d.createElement("script");s.type="module";
-            s.src="https://w.behold.so/widget.js";d.head.append(s);
-          })();
-        </script>
-      </div>
+        <!--
+          INSTAGRAM EMBED — BEHOLD.SO
+          1. Go to behold.so and sign up (free tier available)
+          2. Connect your Instagram account
+          3. Create a feed widget
+          4. Replace BEHOLD_WIDGET_ID below with your widget ID
+        -->
+        <div class="instagram-embed-wrap" id="behold-feed" style="margin-top:1.5rem;">
+          <div data-behold-id="lOXbepzE67B1SjoccCjE"></div>
+          <script>
+            (function() {
+              const d=document,s=d.createElement("script");s.type="module";
+              s.src="https://w.behold.so/widget.js";d.head.append(s);
+            })();
+          </script>
+        </div>
 
-      <!-- PLACEHOLDER GRID — delete after Behold.so is configured -->
-      <div class="instagram-placeholder-grid page-wrap--wide" id="ig-placeholder" style="display:none;">
-        <!-- Replace these with your actual Instagram images -->
-        <div class="instagram-placeholder-grid__cell" style="background:var(--tcb-tan)"></div>
-        <div class="instagram-placeholder-grid__cell" style="background:var(--tcb-gray)"></div>
-        <div class="instagram-placeholder-grid__cell" style="background:var(--tcb-cream)"></div>
-        <div class="instagram-placeholder-grid__cell" style="background:var(--tcb-purple);opacity:0.3"></div>
-        <div class="instagram-placeholder-grid__cell" style="background:var(--tcb-tan)"></div>
-        <div class="instagram-placeholder-grid__cell" style="background:var(--tcb-gray)"></div>
-      </div>
-
-      <div class="instagram-follow-cta mt-4">
-        <a href="https://instagram.com/thechocolatebarista" class="tcb-btn" target="_blank" rel="noopener">
-          Follow @thechocolatebarista
-        </a>
+        <div style="padding: 1.5rem 1.5rem 2rem; border-top: var(--hairline); text-align:right;">
+          <a href="https://instagram.com/thechocolatebarista" class="tcb-btn" target="_blank" rel="noopener">
+            Follow @thechocolatebarista
+          </a>
+        </div>
       </div>
     </section>
 

@@ -19,8 +19,8 @@
   <!-- DATELINE STRIP -->
   <div class="dateline-strip">
     <span>Est. 2016</span>
-    <span id="today-date">Friday, May 8, 2026</span>
     <span>Coffee Culture · Education · Hospitality</span>
+    <span id="today-date">Friday, May 8, 2026</span>
   </div>
 
   <!-- MASTHEAD -->
@@ -129,13 +129,13 @@
 
     <!-- JOURNAL GRID -->
     <div class="page-wrap--wide">
-      <div class="section-header mt-4">
+      <div class="section-header mt-4" style="border-top:none;">
         <div class="section-header__line"></div>
         <span class="section-label">All Entries</span>
         <div class="section-header__line"></div>
       </div>
 
-      <div class="news-grid news-grid--3col fade-in-children" id="journal-grid">
+      <div class="news-grid fade-in-children" id="journal-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); border-top: 3px solid var(--tcb-black);">
 
         <!-- Entry 1 -->
         <article class="article-card" data-category="labor">
@@ -151,8 +151,6 @@
           <a href="journal-post.html" class="article-card__read-more mt-2">Continue reading</a>
         </article>
 
-        <div class="col-divider" aria-hidden="true"></div>
-
         <!-- Entry 2 -->
         <article class="article-card" data-category="race">
           <span class="article-card__eyebrow">Race · Representation</span>
@@ -166,8 +164,6 @@
           <div class="article-card__byline">March 2026 · 14 min read</div>
           <a href="journal-post.html" class="article-card__read-more mt-2">Continue reading</a>
         </article>
-
-        <div class="col-divider" aria-hidden="true"></div>
 
         <!-- Entry 3 -->
         <article class="article-card" data-category="home-barista">
@@ -183,8 +179,8 @@
           <a href="journal-post.html" class="article-card__read-more mt-2">Continue reading</a>
         </article>
 
-        <!-- Entry 4 -->
-        <article class="article-card" data-category="industry">
+        <!-- Entry 4 — hidden until Load More -->
+        <article class="article-card journal-entry--more" data-category="industry" style="display:none;">
           <span class="article-card__eyebrow">Industry</span>
           <div style="width:100%;aspect-ratio:4/3;background:var(--tcb-gray);border-radius:var(--radius);margin-bottom:0.5rem;display:flex;align-items:center;justify-content:center;">
             <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(55,30,10,0.3);">Image</span>
@@ -197,10 +193,8 @@
           <a href="journal-post.html" class="article-card__read-more mt-2">Continue reading</a>
         </article>
 
-        <div class="col-divider" aria-hidden="true"></div>
-
-        <!-- Entry 5 -->
-        <article class="article-card" data-category="culture">
+        <!-- Entry 5 — hidden until Load More -->
+        <article class="article-card journal-entry--more" data-category="culture" style="display:none;">
           <span class="article-card__eyebrow">Coffee Culture</span>
           <div style="width:100%;aspect-ratio:4/3;background:var(--tcb-tan);border-radius:var(--radius);margin-bottom:0.5rem;display:flex;align-items:center;justify-content:center;">
             <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(55,30,10,0.3);">Image</span>
@@ -213,10 +207,8 @@
           <a href="journal-post.html" class="article-card__read-more mt-2">Continue reading</a>
         </article>
 
-        <div class="col-divider" aria-hidden="true"></div>
-
-        <!-- Entry 6 -->
-        <article class="article-card" data-category="race">
+        <!-- Entry 6 — hidden until Load More -->
+        <article class="article-card journal-entry--more" data-category="race" style="display:none;">
           <span class="article-card__eyebrow">Race · History</span>
           <div style="width:100%;aspect-ratio:4/3;background:var(--tcb-cream);border-radius:var(--radius);margin-bottom:0.5rem;display:flex;align-items:center;justify-content:center;">
             <span style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(55,30,10,0.3);">Image</span>
@@ -233,9 +225,13 @@
 
       <!-- LOAD MORE -->
       <div style="padding:2rem 1.5rem;border-top:var(--hairline);text-align:center;">
-        <button class="tcb-btn" onclick="this.textContent='No more entries to load — for now.'">
-          Load more entries
-        </button>
+        <button class="tcb-btn" id="load-more-btn" onclick="
+          document.querySelectorAll('.journal-entry--more').forEach(function(el){ el.style.display = ''; });
+          this.textContent = 'No more entries to load — for now.';
+          this.disabled = true;
+          this.style.opacity = '0.5';
+          this.style.cursor = 'default';
+        ">Load more entries</button>
       </div>
     </div>
 

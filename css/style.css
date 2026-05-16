@@ -321,7 +321,6 @@ h1, h2, h3, h4, h5, h6 {
 .masthead {
   background: var(--tcb-paper);
   padding: 2rem var(--gutter) 0;
-  border-bottom: 3px solid var(--tcb-black);
   z-index: 100;
 }
 
