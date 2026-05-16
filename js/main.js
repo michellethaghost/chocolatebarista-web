@@ -265,5 +265,5 @@ document.addEventListener('DOMContentLoaded', function () {
   initJournalFilters();
   initSmoothScroll();
   setActiveNav();
-  initStickyHeader();
+  // initStickyHeader(); — disabled: header stays at top of page, does not follow scroll
 });
