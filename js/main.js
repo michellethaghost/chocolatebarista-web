@@ -234,7 +234,7 @@ function initMastheadScroll() {
     if (y > 120 && y > lastScroll) {
       masthead.style.position = 'sticky';
       masthead.style.top = '0';
-      masthead.style.zIndex = '50';
+      masthead.style.zIndex = '100';
     }
     lastScroll = y;
   }, 100);
