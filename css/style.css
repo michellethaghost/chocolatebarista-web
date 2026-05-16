@@ -30,9 +30,9 @@
   /* COLORS
      NOTE: TCB Purple (#4B2D8A) is approximated from the design system
      description. Verify against Brand Manual v1.0 before deploying. */
-  --tcb-purple:        #4B2D8A;
-  --tcb-purple-light:  #6B4CAA;
-  --tcb-purple-dark:   #371F6A;
+  --tcb-purple:        #5d2e7f;
+  --tcb-purple-light:  #7a4aa0;
+  --tcb-purple-dark:   #3f1f58;
   --tcb-black:         #1A1208;
   --tcb-espresso:      #371E0A;
   --tcb-tan:           #D7C8B5;
@@ -322,7 +322,9 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--tcb-paper);
   padding: 2rem var(--gutter) 0;
   border-bottom: 3px solid var(--tcb-black);
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .masthead__inner {
