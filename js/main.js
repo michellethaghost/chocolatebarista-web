@@ -219,27 +219,37 @@ function setActiveNav() {
 
 
 /* ============================================================
-   MASTHEAD SCROLL BEHAVIOR
-   Collapses masthead to compact strip on scroll down
+   STICKY HEADER
+   Fixes masthead to top once dateline strip scrolls away.
+   Uses position:fixed + body padding to avoid layout jump.
    ============================================================ */
 
-function initMastheadScroll() {
+function initStickyHeader() {
   const masthead = document.querySelector('.masthead');
+  const dateline = document.querySelector('.dateline-strip');
   if (!masthead) return;
 
-  let lastScroll = 0;
+  let isFixed = false;
 
-  const onScroll = throttle(() => {
-    const y = window.scrollY;
-    if (y > 120 && y > lastScroll) {
-      masthead.style.position = 'sticky';
-      masthead.style.top = '0';
-      masthead.style.zIndex = '100';
+  function update() {
+    const threshold = dateline ? dateline.getBoundingClientRect().bottom : 0;
+    const shouldFix = threshold <= 0;
+    if (shouldFix === isFixed) return;
+    isFixed = shouldFix;
+
+    if (shouldFix) {
+      const h = masthead.offsetHeight;
+      masthead.classList.add('masthead--fixed');
+      document.body.style.paddingTop = h + 'px';
+    } else {
+      masthead.classList.remove('masthead--fixed');
+      document.body.style.paddingTop = '';
     }
-    lastScroll = y;
-  }, 100);
+  }
 
-  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update, { passive: true });
+  update();
 }
 
 
@@ -255,5 +265,5 @@ document.addEventListener('DOMContentLoaded', function () {
   initJournalFilters();
   initSmoothScroll();
   setActiveNav();
-  initMastheadScroll();
+  initStickyHeader();
 });
