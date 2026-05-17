@@ -71,14 +71,14 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 4rem 2rem;
+      padding: 4rem 2rem 2rem;
       text-align: center;
     }
 
     /* ── Eyebrow ── */
     .eyebrow {
       font-family: var(--font-ui);
-      font-size: 0.6rem;
+      font-size: 0.75rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--tcb-tan);
@@ -94,6 +94,7 @@
       font-variation-settings: 'opsz' 72, 'SOFT' 40, 'WONK' 0;
       line-height: 0.92;
       letter-spacing: -0.01em;
+      text-transform: uppercase;
       color: var(--tcb-paper);
       margin-bottom: 0.25rem;
     }
@@ -143,6 +144,17 @@
       white-space: nowrap;
     }
 
+    /* ── Setup guide text ── */
+    .setup-guide-text {
+      font-family: var(--font-ui);
+      font-size: 0.9rem;
+      letter-spacing: 0.02em;
+      color: rgba(215,200,181,0.6);
+      max-width: 380px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.5;
+    }
+
     /* ── Email form ── */
     .signup-form {
       display: flex;
@@ -150,7 +162,7 @@
       gap: 0.65rem;
       width: 100%;
       max-width: 380px;
-      margin: 0 auto 1rem;
+      margin: 0 auto 2rem;
     }
 
     .signup-form label {
@@ -199,21 +211,12 @@
       color: var(--tcb-paper);
       cursor: pointer;
       transition: background 0.18s, color 0.18s;
-      align-self: flex-start;
+      align-self: center;
     }
 
     .tcb-btn:hover {
       background: var(--tcb-paper);
       color: var(--tcb-black);
-    }
-
-    .fine-print {
-      font-family: var(--font-ui);
-      font-size: 0.58rem;
-      letter-spacing: 0.04em;
-      color: rgba(215,200,181,0.3);
-      max-width: 380px;
-      margin: 0 auto 3rem;
     }
 
     /* ── Social links ── */
@@ -223,6 +226,7 @@
       justify-content: center;
       align-items: center;
       margin-top: 0.5rem;
+      margin-bottom: 1rem;
     }
 
     .social-links a {
@@ -288,7 +292,7 @@
     <div class="masthead-rule" role="presentation"></div>
 
     <p class="deck">
-      A new home for the writing, ideas,<br>and conversations this industry needs.
+      A new home for the writing, ideas, and conversations pushing coffee culture and hospitality forward.
     </p>
 
     <!-- DIVIDER -->
@@ -297,6 +301,8 @@
       <span class="section-divider__label">Be the first to know</span>
       <div class="section-divider__line"></div>
     </div>
+
+    <p class="setup-guide-text">Enter your email below to receive your free Home Barista Setup Guide on launch.</p>
 
     <!-- KIT SIGNUP FORM -->
     <form
@@ -316,8 +322,6 @@
       >
       <button type="submit" class="tcb-btn">Notify Me</button>
     </form>
-
-    <p class="fine-print">No spam. Unsubscribe anytime. + Get your free Home Barista Setup Guide on launch.</p>
 
     <!-- SOCIAL LINKS -->
     <div class="section-divider" role="presentation" style="margin-bottom:1.25rem;">
