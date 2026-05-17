@@ -450,10 +450,11 @@ h1, h2, h3, h4, h5, h6 {
    ============================================================ */
 .tcb-btn {
   display: inline-block;
-  font-family: var(--font-ui);
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-variation-settings: 'opsz' 48, 'SOFT' 60, 'WONK' 0;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   text-decoration: none;
   padding: 0.75rem 1.5rem;
