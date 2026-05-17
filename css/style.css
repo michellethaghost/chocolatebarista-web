@@ -808,7 +808,6 @@ h1, h2, h3, h4, h5, h6 {
   gap: 1.5px;
   margin-top: 2rem;
   border-top: 3px solid var(--tcb-black);
-  border-bottom: 3px solid var(--tcb-black);
 }
 
 .video-grid__item {
@@ -829,7 +828,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .video-card__label {
   padding: 0.85rem 1rem;
-  background: var(--tcb-paper);
+  background: var(--tcb-cream);
   border-top: var(--hairline);
 }
 
@@ -1665,4 +1664,39 @@ h1, h2, h3, h4, h5, h6 {
   .calendly-section {
     padding: 3rem var(--gutter);
   }
+}
+
+
+/* ============================================================
+   KIT (CONVERTKIT) POPUP OVERRIDES
+   ============================================================ */
+
+/* Headline — Fraunces, all caps */
+[data-uid="787e052623"] .formkit-header h1,
+[data-uid="787e052623"] .formkit-header h2,
+[data-uid="787e052623"] .formkit-header h3,
+[data-uid="787e052623"] h1,
+[data-uid="787e052623"] h2,
+.formkit-modal .formkit-header h1,
+.formkit-modal .formkit-header h2,
+.formkit-modal h1,
+.formkit-modal h2 {
+  font-family: 'Fraunces', 'Cormorant Garamond', Georgia, serif !important;
+  font-weight: 900 !important;
+  font-variation-settings: 'opsz' 72, 'SOFT' 100, 'WONK' 1 !important;
+  text-transform: uppercase !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1.05 !important;
+}
+
+/* Submit button — Fraunces, all caps */
+[data-uid="787e052623"] .formkit-submit,
+[data-uid="787e052623"] button[type="submit"],
+.formkit-modal .formkit-submit,
+.formkit-modal button[type="submit"] {
+  font-family: 'Fraunces', 'Cormorant Garamond', Georgia, serif !important;
+  font-weight: 900 !important;
+  font-variation-settings: 'opsz' 48, 'SOFT' 80, 'WONK' 1 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
 }
