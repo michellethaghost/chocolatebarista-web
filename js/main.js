@@ -43,11 +43,11 @@ function initNav() {
   const nav     = document.getElementById('main-nav');
   if (!toggle || !nav) return;
 
-  toggle.addEventListener('click', function () {
+  toggle.addEventListener('click', function (e) {
+    e.stopPropagation();
     const isOpen = nav.classList.toggle('open');
     toggle.classList.toggle('open', isOpen);
     toggle.setAttribute('aria-expanded', String(isOpen));
-    document.body.style.overflow = isOpen ? 'hidden' : '';
   });
 
   // Close on outside click
@@ -56,7 +56,6 @@ function initNav() {
       nav.classList.remove('open');
       toggle.classList.remove('open');
       toggle.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
     }
   });
 
@@ -66,7 +65,6 @@ function initNav() {
       nav.classList.remove('open');
       toggle.classList.remove('open');
       toggle.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
       toggle.focus();
     }
   });

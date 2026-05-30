@@ -322,6 +322,7 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--tcb-paper);
   padding: 2rem var(--gutter) 0;
   z-index: 100;
+  position: relative;
 }
 
 /* Applied by JS once dateline strip scrolls off screen */
@@ -717,7 +718,7 @@ h1, h2, h3, h4, h5, h6 {
   gap: 4rem;
   align-items: center;
   width: max-content;
-  animation: ticker 30s linear infinite;
+  animation: ticker 60s linear infinite;
   will-change: transform;
 }
 
@@ -1491,11 +1492,11 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .news-grid--3col {
-    grid-template-columns: 1fr 1px 1fr;
+    grid-template-columns: 1fr;
   }
 
-  .news-grid--3col .col-divider:last-of-type + .article-card {
-    grid-column: span 3;
+  .news-grid--3col .col-divider {
+    display: none;
   }
 
   .article-card--hero {
@@ -1564,8 +1565,8 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Mobile — 600px */
-@media (max-width: 600px) {
+/* Mobile — 768px */
+@media (max-width: 768px) {
   :root {
     --gutter: 1rem;
   }
