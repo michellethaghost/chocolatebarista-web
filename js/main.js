@@ -102,39 +102,11 @@ function initScrollAnimations() {
 
 /* ============================================================
    PRESS CAROUSEL
-   Auto-scrolls via CSS animation; JS adds pause-on-hover
-   and keyboard navigation for accessibility.
+   Auto-scrolls via CSS animation — no pause, no interaction.
    ============================================================ */
 
 function initCarousel() {
-  const track = document.getElementById('press-track');
-  if (!track) return;
-
-  // CSS handles the animation; we just expose pause control
-  // Pause on focus (keyboard users tabbing through logos)
-  track.addEventListener('focusin', () => {
-    track.style.animationPlayState = 'paused';
-  });
-
-  track.addEventListener('focusout', () => {
-    track.style.animationPlayState = '';
-  });
-
-  // Keyboard: arrow keys nudge the carousel
-  track.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowRight') {
-      const links = [...track.querySelectorAll('a[href]')];
-      const current = document.activeElement;
-      const idx = links.indexOf(current);
-      if (idx < links.length - 1) links[idx + 1].focus();
-    }
-    if (e.key === 'ArrowLeft') {
-      const links = [...track.querySelectorAll('a[href]')];
-      const current = document.activeElement;
-      const idx = links.indexOf(current);
-      if (idx > 0) links[idx - 1].focus();
-    }
-  });
+  // Carousel is CSS-only; no JS interaction needed.
 }
 
 

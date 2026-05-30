@@ -721,9 +721,7 @@ h1, h2, h3, h4, h5, h6 {
   will-change: transform;
 }
 
-.carousel-track:hover {
-  animation-play-state: paused;
-}
+/* hover-pause removed — carousel scrolls indefinitely */
 
 @keyframes ticker {
   from { transform: translateX(0); }
