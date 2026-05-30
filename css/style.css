@@ -1215,8 +1215,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer-social {
-  display: flex;
-  gap: 1rem;
+  display: none;
 }
 
 .footer-social a {
