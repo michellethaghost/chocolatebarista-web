@@ -1663,8 +1663,40 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
   }
 
+  /* Reset absolute centering so middle span stacks normally in column layout */
+  .dateline-strip span:nth-child(2) {
+    position: static;
+    transform: none;
+  }
+
   .form-group--row {
     grid-template-columns: 1fr;
+  }
+
+  /* Newsletter section: collapse 3-column grid to single column */
+  #newsletter > div {
+    grid-template-columns: 1fr !important;
+  }
+
+  #newsletter > div > div:first-child {
+    padding-right: 0 !important;
+    padding-bottom: 1.5rem;
+  }
+
+  #newsletter > div > div:last-child {
+    padding-left: 0 !important;
+  }
+
+  /* Divider bar becomes a horizontal rule */
+  #newsletter > div > div:nth-child(2) {
+    height: 1px !important;
+    width: 100%;
+    margin: 0 !important;
+  }
+
+  /* Collapse first/last name row to single column */
+  #newsletter form > div {
+    grid-template-columns: 1fr !important;
   }
 
   .calendly-section {
