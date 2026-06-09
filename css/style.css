@@ -560,7 +560,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .article-card--hero:hover .article-card__headline {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 .article-card__image {
