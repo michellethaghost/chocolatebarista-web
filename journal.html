@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Journal — The Chocolate Barista</title>
+  <meta name="description" content="Essays, criticism, and dispatches from the intersection of coffee, culture, race, and belonging — by Michelle R. Johnson-Strickland.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..900,0..100,0..1;1,9..144,400..900,0..100,0..1&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inter:wght@400;500;600&family=Questrial&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <!-- Kit (ConvertKit) -->
+  <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- DATELINE STRIP -->
+  <div class="dateline-strip">
+    <span>Est. 2016</span>
+    <span>Coffee Culture · Education · Hospitality</span>
+    <span id="today-date">Friday, May 8, 2026</span>
+  </div>
+
+  <!-- MASTHEAD -->
+  <header class="masthead">
+    <div class="masthead__inner">
+      <div class="masthead__title">
+        <a href="index.html" aria-label="The Chocolate Barista — Home">
+          <div class="tcb-masthead-name">The Chocolate Barista</div>
+        </a>
+      </div>
+      <div class="masthead__title-row">
+        <nav class="masthead__nav" id="main-nav" aria-label="Primary navigation">
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- PAGE HERO -->
+    <div class="page-hero">
+      <div class="page-hero__inner">
+        <h1 class="page-hero__title">From the Journal</h1>
+      </div>
+    </div>
+
+    <!-- CATEGORY FILTERS -->
+    <div style="background:var(--tcb-paper);border-bottom: var(--hairline-mid);padding: 0.75rem var(--gutter);">
+      <div style="max-width:var(--max-width);margin:0 auto;display:flex;gap:0;overflow-x:auto;" role="tablist" aria-label="Filter by category">
+        <button class="journal-filter active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="journal-filter" data-filter="culture" role="tab" aria-selected="false">Culture</button>
+        <button class="journal-filter" data-filter="race" role="tab" aria-selected="false">Race &amp; Representation</button>
+        <button class="journal-filter" data-filter="home-barista" role="tab" aria-selected="false">Barista Tips</button>
+        <button class="journal-filter" data-filter="industry" role="tab" aria-selected="false">Industry</button>
+        <button class="journal-filter" data-filter="hospitality" role="tab" aria-selected="false">Hospitality</button>
+      </div>
+    </div>
+
+    <style>
+      .journal-filter {
+        font-family: var(--font-ui);
+        font-size: 0.65rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding: 0.5rem 1.1rem;
+        border: none;
+        border-right: var(--hairline);
+        background: transparent;
+        color: rgba(55,30,10,0.55);
+        cursor: pointer;
+        transition: background var(--dur-fast), color var(--dur-fast);
+        white-space: nowrap;
+      }
+      .journal-filter:first-child { border-left: var(--hairline); }
+      .journal-filter:hover,
+      .journal-filter.active {
+        background: var(--tcb-black);
+        color: var(--tcb-paper);
+      }
+    </style>
+
+    <!-- JOURNAL COMING SOON -->
+    <div class="page-wrap--wide">
+      <div style="padding:4rem 1.5rem;text-align:center;border-top:3px solid var(--tcb-black);">
+        <!-- Hero image placeholder -->
+        <div style="max-width:700px;margin:0 auto 3rem;aspect-ratio:16/7;background:var(--tcb-tan);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;">
+          <span style="font-family:var(--font-ui);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(55,30,10,0.4);">Journal Hero Image</span>
+        </div>
+        <span class="eyebrow" style="display:block;margin-bottom:1.25rem;">Something worth reading is on its way</span>
+        <h2 style="font-family:var(--font-display);font-weight:900;font-variation-settings:'opsz' 144,'SOFT' 100,'WONK' 1;font-size:clamp(2rem,5vw,4.5rem);line-height:0.95;text-transform:uppercase;letter-spacing:-0.01em;margin-bottom:1.75rem;">
+          The Journal Is Launching Soon
+        </h2>
+        <p style="font-family:var(--font-body);font-style:italic;font-size:clamp(1.1rem,1.5vw,1.35rem);line-height:1.5;color:var(--tcb-espresso);max-width:44ch;margin:0 auto 2.5rem;">
+          Essays, criticism, and dispatches from the intersection of coffee, culture, race, and belonging. Subscribe to be among the first to read.
+        </p>
+        <a href="contact.html" class="tcb-btn tcb-btn--solid">Subscribe for updates</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-col__label">Navigate</div>
+          <a href="services.html">Services</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col__label">Affiliates</div>
+          <a href="https://www.amazon.com/shop/thechocolatebarista?ccs_id=e7268fee-f52d-444a-ba2e-8e8f45076a10&isPublicView=true" target="_blank" rel="noopener">Amazon Storefront</a>
+          <a href="https://www.espressoparts.com/?rfsn=9035268.25ebf4" target="_blank" rel="noopener">Espresso Parts</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col__label">Follow</div>
+          <a href="https://instagram.com/thechocolatebarista" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.tiktok.com/@thechocolatebarista" target="_blank" rel="noopener">TikTok</a>
+          <a href="https://www.facebook.com/TheChocolateBarista/" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://www.threads.net/@thechocolatebarista" target="_blank" rel="noopener">Threads</a>
+          <a href="https://www.pinterest.com/thechocolatebarista/" target="_blank" rel="noopener">Pinterest</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col__label">Family</div>
+          <a href="https://www.ghosttown.world" target="_blank" rel="noopener">Ghost Town Oats</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 The Chocolate Barista · All rights reserved</span>
+        <div class="footer-social">
+          <a href="https://instagram.com/thechocolatebarista" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.youtube.com/@YourChannelHandle" target="_blank" rel="noopener">YouTube</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
