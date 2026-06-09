@@ -106,12 +106,11 @@ img, video, iframe {
 
 a {
   color: inherit;
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  text-decoration: none;
 }
 
 a:hover {
-  text-decoration-thickness: 2px;
+  text-decoration: none;
 }
 
 button {
