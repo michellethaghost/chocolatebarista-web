@@ -9,7 +9,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inter:wght@400;500&family=Questrial&display=swap" rel="stylesheet">
 
   <!-- Kit (ConvertKit) -->
   <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
@@ -28,7 +28,7 @@
       --tcb-gold:         #C49A2A;
       --font-display: 'Fraunces', Georgia, serif;
       --font-body:    'Cormorant', Georgia, serif;
-      --font-ui:      'Inter', system-ui, sans-serif;
+      --font-ui:      'Questrial', 'Inter', system-ui, sans-serif;
     }
 
     html, body {
@@ -302,14 +302,28 @@
       <div class="section-divider__line"></div>
     </div>
 
-    <p class="setup-guide-text">Enter your email below to receive your free Home Barista Setup Guide on launch.</p>
-
     <!-- KIT SIGNUP FORM -->
     <form
       class="signup-form"
       action="https://app.kit.com/forms/9421377/subscriptions"
       method="post"
       aria-label="Newsletter sign-up">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.65rem;">
+        <input
+          type="text"
+          name="fields[first_name]"
+          placeholder="First name"
+          autocomplete="given-name"
+          style="font-family:var(--font-body);font-size:1.05rem;padding:0.8rem 1rem;border:1px solid rgba(215,200,181,0.3);border-radius:2px;background:rgba(251,250,246,0.05);color:var(--tcb-paper);outline:none;"
+          aria-label="First name">
+        <input
+          type="text"
+          name="fields[last_name]"
+          placeholder="Last name"
+          autocomplete="family-name"
+          style="font-family:var(--font-body);font-size:1.05rem;padding:0.8rem 1rem;border:1px solid rgba(215,200,181,0.3);border-radius:2px;background:rgba(251,250,246,0.05);color:var(--tcb-paper);outline:none;"
+          aria-label="Last name">
+      </div>
       <label for="cs-email">Your email address</label>
       <input
         id="cs-email"
@@ -337,6 +351,16 @@
       <span class="social-links__dot" aria-hidden="true">◆</span>
       <a href="https://www.pinterest.com/thechocolatebarista/" target="_blank" rel="noopener noreferrer">Pinterest</a>
     </nav>
+
+    <!-- JOURNAL COMING SOON -->
+    <div class="section-divider" role="presentation" style="margin-top:1.75rem; margin-bottom:1.5rem;">
+      <div class="section-divider__line"></div>
+      <span class="section-divider__label">The Journal</span>
+      <div class="section-divider__line"></div>
+    </div>
+    <p style="font-family:var(--font-body);font-style:italic;font-size:clamp(1rem,1.8vw,1.2rem);color:rgba(215,200,181,0.7);max-width:400px;margin:0 auto 0.75rem;line-height:1.4;">
+      Essays and criticism on coffee, culture, race, and belonging — launching soon.
+    </p>
 
     <!-- SHOP LINKS -->
     <div class="section-divider" role="presentation" style="margin-top:1.75rem; margin-bottom:1.25rem;">

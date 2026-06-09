@@ -45,7 +45,7 @@
   /* TYPOGRAPHY */
   --font-display: 'Fraunces', 'Pierson', 'Cormorant Garamond', Georgia, serif;
   --font-body:    'Cormorant', 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
-  --font-ui:      'Inter', system-ui, -apple-system, sans-serif;
+  --font-ui:      'Questrial', 'Inter', system-ui, -apple-system, sans-serif;
 
   /* LAYOUT */
   --gutter:    clamp(1.25rem, 5vw, 7rem);

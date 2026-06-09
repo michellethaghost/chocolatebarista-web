@@ -8,7 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..900,0..100,0..1;1,9..144,400..900,0..100,0..1&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..900,0..100,0..1;1,9..144,400..900,0..100,0..1&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Inter:wght@400;500;600&family=Questrial&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest" defer></script>
 
   <!-- Kit (ConvertKit) -->
@@ -37,7 +37,6 @@
         <nav class="masthead__nav" id="main-nav" aria-label="Primary navigation">
           <a href="index.html">Home</a>
           <a href="journal.html">Journal</a>
-          <a href="work.html">Work</a>
           <a href="about.html">About</a>
           <a href="services.html" class="active">Services</a>
           <a href="contact.html">Contact</a>
@@ -173,13 +172,29 @@
         <span class="eyebrow mb-2" style="display:block;">Be the First to Know</span>
         <h2 class="tcb-headline mb-3">Services Open Later This Year</h2>
         <p class="tcb-body mb-4" style="color:var(--tcb-espresso);max-width:44ch;margin-left:auto;margin-right:auto;">
-          Consulting, speaking, and writing commissions open in Fall 2026. Subscribe to The Journal — you'll hear it here first, along with the writing and thinking behind the work.
+          Consulting and speaking commissions open in Fall 2026 for 2027 consideration. Writing commissions are not being accepted at this time — the writing that lives here is done on my own terms, for The Journal. Subscribe below — you'll hear it here first, along with the thinking behind the work.
         </p>
         <form
           action="https://app.kit.com/forms/9421377/subscriptions"
           method="post"
           style="display:flex;flex-direction:column;gap:0.75rem;max-width:380px;margin:0 auto;"
           aria-label="Notify me when services open">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;">
+            <input
+              type="text"
+              name="fields[first_name]"
+              placeholder="First name"
+              autocomplete="given-name"
+              class="form-input"
+              aria-label="First name">
+            <input
+              type="text"
+              name="fields[last_name]"
+              placeholder="Last name"
+              autocomplete="family-name"
+              class="form-input"
+              aria-label="Last name">
+          </div>
           <input
             type="email"
             name="email_address"
@@ -192,7 +207,7 @@
             Notify me
           </button>
           <p style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.04em;color:rgba(55,30,10,0.4);margin-top:0.25rem;">
-            Free. No spam. Unsubscribe anytime. + Get the free Home Barista Setup Guide.
+            Free. No spam. Unsubscribe anytime.
           </p>
         </form>
         <p style="font-family:var(--font-body);font-style:italic;font-size:0.9rem;color:rgba(55,30,10,0.5);margin-top:2rem;">
@@ -210,7 +225,6 @@
         <div class="footer-col">
           <div class="footer-col__label">Navigate</div>
           <a href="journal.html">Journal</a>
-          <a href="work.html">Work</a>
           <a href="about.html">About</a>
           <a href="services.html">Services</a>
           <a href="contact.html">Contact</a>
@@ -244,7 +258,5 @@
   </footer>
 
   <script src="js/main.js"></script>
-  <!-- Kit pop-up form -->
-  <script async data-uid="787e052623" src="https://thechocolatebarista.kit.com/787e052623/index.js"></script>
 </body>
 </html>
