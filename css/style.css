@@ -1014,7 +1014,6 @@ h1, h2, h3, h4, h5, h6 {
   grid-template-columns: 1fr 1px 1fr;
   gap: 0;
   margin-top: 2rem;
-  border-top: 3px solid var(--tcb-black);
 }
 
 .contact-info {
